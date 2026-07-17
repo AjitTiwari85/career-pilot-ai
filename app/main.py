@@ -4,30 +4,40 @@ from utils.logger import logger
 import time
 
 
-
 def main():
-
-    logger.info("Application started")
 
     browser = BrowserManager(headless=HEADLESS)
 
-    browser.start()
+    try:
 
-    logger.info("Browser Started")
+        logger.info("Application Started")
 
-    browser.open("https://www.google.com")
+        browser.start()
 
-    logger.info("Google Opened")
+        logger.info("Browser Started")
 
-    print(browser.get_title())
+        browser.open("https://abcxyz123456789.com")
 
-    time.sleep(5)
+        logger.info("Google Opened")
 
-    browser.close()
+        logger.info(f"Title : {browser.get_title()}")
 
-    logger.info("Browser closed")
+        logger.info(f"URL : {browser.get_url()}")
 
-    logger.info("Application finished")
+        time.sleep(5)
+
+    except Exception as e:
+
+        logger.error(f"Error : {e}")
+
+    finally:
+
+        browser.close()
+
+        logger.info("Browser Closed")
+
+        logger.info("Application Finished")
+
 
 if __name__ == "__main__":
     main()
