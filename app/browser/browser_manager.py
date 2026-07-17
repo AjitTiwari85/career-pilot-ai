@@ -19,6 +19,15 @@ class BrowserManager:
         self.page = self.browser.new_page()
 
         return self.page
+    
+    def open(self,url):
+        self.page.goto(url)
+
+    def get_title(self):
+        return self.page.title()
+    
+    def get_url(self):
+        return self.page.url
 
     def close(self):
 

@@ -1,5 +1,6 @@
 from config.config import HEADLESS
 from browser.browser_manager import BrowserManager
+import time
 
 
 
@@ -11,7 +12,11 @@ def main():
 
     page.goto("https://www.google.com")
 
-    print(page.title())
+    print("Title :" , browser.get_title())
+
+    print("URL :" , browser.get_url())
+
+    time.sleep(5)
 
     browser.close()
 
