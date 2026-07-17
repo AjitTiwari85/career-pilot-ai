@@ -16,6 +16,8 @@ def main():
 
     print("URL :" , browser.get_url())
 
+    browser.refresh()
+
     time.sleep(5)
 
     browser.close()

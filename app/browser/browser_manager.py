@@ -28,6 +28,9 @@ class BrowserManager:
     
     def get_url(self):
         return self.page.url
+    
+    def refresh(self):
+        self.page.reload()
 
     def close(self):
 
