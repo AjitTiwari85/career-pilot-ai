@@ -16,9 +16,11 @@ def main():
 
         logger.info("Browser Started")
 
-        browser.open("https://abcxyz123456789.com")
+        browser.open("https://google.com")
 
         logger.info("Google Opened")
+
+        browser.take_screenshot("google")
 
         logger.info(f"Title : {browser.get_title()}")
 

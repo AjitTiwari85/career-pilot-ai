@@ -29,8 +29,11 @@ class BrowserManager:
     def get_url(self):
         return self.page.url
     
-    def refresh(self):
-        self.page.reload()
+    # def refresh(self):
+    #     self.page.reload()
+
+    def take_screenshot(self, name):
+        self.page.screenshot(path=f"screenshots/{name}.png")
 
     def close(self):
 
