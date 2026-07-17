@@ -1,16 +1,19 @@
-from config.config import (
-    HEADLESS,
-    KEYWORD,
-    LOCATION,
-    RESUME_PATH,
-)
+from config.config import HEADLESS
+from browser.browser_manager import BrowserManager
+
+
 
 def main():
-    print("===== CareerPilot-AI =====")
-    print(f"Headless: {HEADLESS}")
-    print(f"Keyword: {KEYWORD}")
-    print(f"Location: {LOCATION}")
-    print(f"Resume Path: {RESUME_PATH}")
+
+    browser = BrowserManager(headless=HEADLESS)
+
+    page = browser.start()
+
+    page.goto("https://www.google.com")
+
+    print(page.title())
+
+    browser.close()
 
 if __name__ == "__main__":
     main()
