@@ -4,6 +4,7 @@ from config.config import HEADLESS
 from browser.browser_manager import BrowserManager
 from linkedin.login import LinkedInLogin
 from linkedin.profile import LinkedInProfile
+from linkedin.jobs import LinkedInJobs
 from utils.logger import logger
 
 
@@ -21,6 +22,7 @@ def main():
 
         login = LinkedInLogin(browser)
         profile = LinkedInProfile(browser)
+        jobs = LinkedInJobs(browser)
 
         auth = Path("auth/auth.json")
 
@@ -38,6 +40,10 @@ def main():
         logger.info(f"URL   : {browser.get_url()}")
 
         profile.screenshot()
+
+        jobs.open()
+
+        jobs.search("Python Developer")
 
     except Exception:
 
