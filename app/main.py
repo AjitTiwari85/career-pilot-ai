@@ -2,6 +2,8 @@ from pathlib import Path
 
 from config.config import HEADLESS
 from browser.browser_manager import BrowserManager
+from linkedin.login import LinkedInLogin
+from linkedin.profile import LinkedInProfile
 from utils.logger import logger
 
 
@@ -14,39 +16,39 @@ def main():
         logger.info("===== CareerPilot-AI Started =====")
 
         browser.start()
+
         logger.info("Browser Started")
 
-        browser.open("https://www.linkedin.com")
-        logger.info("LinkedIn Opened")
+        login = LinkedInLogin(browser)
+        profile = LinkedInProfile(browser)
 
         auth = Path("auth/auth.json")
 
+        login.open()
+
         if not auth.exists():
 
-            logger.warning("No saved session found")
             input("Login complete hone ke baad ENTER dabao...")
 
             browser.save_session()
 
-        browser.open("https://www.linkedin.com/in/me/")
-        logger.info("Profile Opened")
-
-        browser.wait(3000)
+        profile.open()
 
         logger.info(f"Title : {browser.get_title()}")
         logger.info(f"URL   : {browser.get_url()}")
 
-        browser.take_screenshot("linkedin-profile")
-        logger.success("Screenshot Saved")
+        profile.screenshot()
 
-    except Exception as e:
+    except Exception:
 
-        logger.exception(f"Error : {e}")
+        logger.exception("Unexpected Error")
 
     finally:
 
         browser.close()
+
         logger.info("Browser Closed")
+
         logger.info("===== CareerPilot-AI Finished =====")
 
 
