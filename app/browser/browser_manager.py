@@ -1,4 +1,6 @@
+from pathlib import Path
 from playwright.sync_api import sync_playwright
+from utils.logger import logger
 
 
 class BrowserManager:
@@ -7,33 +9,107 @@ class BrowserManager:
         self.headless = headless
         self.playwright = None
         self.browser = None
+        self.context = None
         self.page = None
 
     def start(self):
+
         self.playwright = sync_playwright().start()
 
         self.browser = self.playwright.chromium.launch(
             headless=self.headless
         )
 
-        self.page = self.browser.new_page()
+        auth_file = Path("auth/auth.json")
 
-        return self.page
-    
-    def open(self,url):
+        # Session Exists
+        if auth_file.exists() and auth_file.stat().st_size > 0:
+
+            logger.info("✓ Saved LinkedIn session found")
+
+            self.context = self.browser.new_context(
+                storage_state=str(auth_file)
+            )
+
+        else:
+
+            logger.warning("No saved session found")
+            logger.info("Manual login required")
+
+            self.context = self.browser.new_context()
+
+        self.page = self.context.new_page()
+
+    # -----------------------
+    # Navigation
+    # -----------------------
+
+    def open(self, url):
         self.page.goto(url)
+
+    # -----------------------
+    # Google Search
+    # -----------------------
+
+    def search_google(self, text):
+
+        search_box = self.page.locator('textarea[name="q"]')
+
+        search_box.fill(text)
+
+        search_box.press("Enter")
+
+    # -----------------------
+    # Wait
+    # -----------------------
+
+    def wait(self, milliseconds):
+        self.page.wait_for_timeout(milliseconds)
+
+    # -----------------------
+    # Get Title
+    # -----------------------
 
     def get_title(self):
         return self.page.title()
-    
+
+    # -----------------------
+    # Get URL
+    # -----------------------
+
     def get_url(self):
         return self.page.url
-    
-    # def refresh(self):
-    #     self.page.reload()
+
+    # -----------------------
+    # Screenshot
+    # -----------------------
 
     def take_screenshot(self, name):
-        self.page.screenshot(path=f"screenshots/{name}.png")
+
+        Path("screenshots").mkdir(exist_ok=True)
+
+        self.page.screenshot(
+            path=f"screenshots/{name}.png",
+            full_page=True
+        )
+
+    # -----------------------
+    # Save Session
+    # -----------------------
+
+    def save_session(self):
+
+        Path("auth").mkdir(exist_ok=True)
+
+        self.context.storage_state(
+            path="auth/auth.json"
+        )
+
+        logger.success("✓ Session Saved Successfully")
+
+    # -----------------------
+    # Close Browser
+    # -----------------------
 
     def close(self):
 

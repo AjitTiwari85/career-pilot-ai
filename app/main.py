@@ -1,7 +1,8 @@
+from pathlib import Path
+
 from config.config import HEADLESS
 from browser.browser_manager import BrowserManager
 from utils.logger import logger
-import time
 
 
 def main():
@@ -10,35 +11,43 @@ def main():
 
     try:
 
-        logger.info("Application Started")
+        logger.info("===== CareerPilot-AI Started =====")
 
         browser.start()
-
         logger.info("Browser Started")
 
-        browser.open("https://google.com")
+        browser.open("https://www.linkedin.com")
+        logger.info("LinkedIn Opened")
 
-        logger.info("Google Opened")
+        auth = Path("auth/auth.json")
 
-        browser.take_screenshot("google")
+        if not auth.exists():
+
+            logger.warning("No saved session found")
+            input("Login complete hone ke baad ENTER dabao...")
+
+            browser.save_session()
+
+        browser.open("https://www.linkedin.com/in/me/")
+        logger.info("Profile Opened")
+
+        browser.wait(3000)
 
         logger.info(f"Title : {browser.get_title()}")
+        logger.info(f"URL   : {browser.get_url()}")
 
-        logger.info(f"URL : {browser.get_url()}")
-
-        time.sleep(5)
+        browser.take_screenshot("linkedin-profile")
+        logger.success("Screenshot Saved")
 
     except Exception as e:
 
-        logger.error(f"Error : {e}")
+        logger.exception(f"Error : {e}")
 
     finally:
 
         browser.close()
-
         logger.info("Browser Closed")
-
-        logger.info("Application Finished")
+        logger.info("===== CareerPilot-AI Finished =====")
 
 
 if __name__ == "__main__":
