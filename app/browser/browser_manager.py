@@ -44,8 +44,50 @@ class BrowserManager:
     # Navigation
     # -----------------------
 
-    def open(self, url):
-        self.page.goto(url)
+    def open(self, url, timeout=60000, retries=2):
+        """
+        Navigates to a URL.
+
+        LinkedIn is a heavy single-page app with constant background network
+        activity (analytics, chat widgets, presence pings), so Playwright's
+        default wait_until="load" can time out even though the page is
+        actually usable. We wait for "domcontentloaded" instead (fires much
+        sooner and is enough for our selectors to work), use a longer
+        timeout, and retry on failure in case of a transient network hiccup.
+        """
+
+        last_error = None
+
+        for attempt in range(1, retries + 2):  # e.g. retries=2 -> 3 total attempts
+
+            try:
+                self.page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+                return
+
+            except Exception as e:
+                last_error = e
+                logger.warning(
+                    f"Navigation to '{url}' failed on attempt {attempt} "
+                    f"(wait_until=domcontentloaded): {e}"
+                )
+
+                if attempt <= retries:
+                    logger.info("Retrying navigation...")
+                    self.wait(2000)
+
+        # All attempts failed — try one last time with the loosest possible
+        # wait condition ("commit": just wait for the network request to be
+        # sent), so at least a partially-loaded page is available for
+        # debugging (screenshot, etc.) instead of a hard crash.
+        try:
+            logger.warning(
+                "All domcontentloaded attempts failed. Trying wait_until='commit' as last resort..."
+            )
+            self.page.goto(url, wait_until="commit", timeout=timeout)
+            return
+        except Exception as e:
+            logger.error(f"Navigation to '{url}' failed completely: {e}")
+            raise last_error
 
     # -----------------------
     # Google Search
