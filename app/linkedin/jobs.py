@@ -35,6 +35,8 @@
 #         logger.success("Search Completed")
 
 
+from urllib.parse import quote
+
 from utils.logger import logger
 
 
@@ -47,33 +49,41 @@ class LinkedInJobs:
 
         logger.info("Opening Jobs")
 
-        self.browser.open(
-            "https://www.linkedin.com/jobs/search/"
-        )
+        self.browser.open("https://www.linkedin.com/jobs/search/")
 
-        self.browser.wait(5000)
+        self.browser.wait(3000)
 
         logger.success("Jobs Opened")
 
+    def search(self, keyword, location="", sort_by_recent=True):
+        """
+        Instead of typing into the search box (which can carry over LinkedIn's
+        remembered "currentJobId" and default "Most Relevant" sort from a
+        previous run), we navigate DIRECTLY to a fully-formed search URL.
 
-    def search(self, keyword):
+        This guarantees a fresh, keyword-matched result set sorted the way
+        we want, instead of showing the same cached top job every run.
+
+        sortBy=DD is the same "Most Recent" value used by filters.py's
+        panel-based sort (input#advanced-filter-sortBy-DD).
+        """
 
         logger.info(f"Searching : {keyword}")
 
-        search_box = self.browser.page.locator(
-            'input[aria-label="Search by title, skill, or company"]'
-        ).first
+        params = f"keywords={quote(keyword)}"
 
-        logger.info(f"Search boxes found: {search_box.count()}")
+        if location:
+            params += f"&location={quote(location)}"
 
+        if sort_by_recent:
+            params += "&sortBy=DD"
 
-        
-        search_box.fill(keyword)
+        url = f"https://www.linkedin.com/jobs/search/?{params}"
 
-        search_box.press("Enter")
+        self.browser.open(url)
+
+        self.browser.wait(3000)
 
         self.browser.take_screenshot("jobs-page")
-
-        self.browser.wait(50000)
 
         logger.success("Search Completed")
