@@ -5,6 +5,7 @@ from browser.browser_manager import BrowserManager
 from linkedin.login import LinkedInLogin
 from linkedin.profile import LinkedInProfile
 from linkedin.jobs import LinkedInJobs
+from linkedin.filters import LinkedInFilters
 from utils.logger import logger
 
 
@@ -23,6 +24,7 @@ def main():
         login = LinkedInLogin(browser)
         profile = LinkedInProfile(browser)
         jobs = LinkedInJobs(browser)
+        filters = LinkedInFilters(browser)
 
         auth = Path("auth/auth.json")
 
@@ -44,6 +46,20 @@ def main():
         jobs.open()
 
         jobs.search("Python Developer")
+
+        # -----------------------
+        # Apply Filters (all in one "All filters" panel session)
+        # -----------------------
+
+        filters.apply_filters(
+            date_posted="Past week",
+            experience="0-2",
+            remote="Remote",
+            easy_apply=True,
+            sort_by="Most recent",
+        )
+
+        browser.take_screenshot("jobs-filtered")
 
     except Exception:
 
