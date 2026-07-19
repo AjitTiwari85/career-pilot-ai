@@ -31,10 +31,20 @@ def main():
         login.open()
 
         if not auth.exists():
-
+ 
+            # No saved session yet — must open the feed/home page for manual login
+            login.open()
+ 
             input("Login complete hone ke baad ENTER dabao...")
-
+ 
             browser.save_session()
+ 
+        else:
+ 
+            # Saved session already exists — skip the feed entirely,
+            # go straight to Profile/Jobs (avoids the "same feed post" issue
+            # and saves a page load).
+            logger.info("Skipping LinkedIn feed (saved session found).")
 
         profile.open()
 
