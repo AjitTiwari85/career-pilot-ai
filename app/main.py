@@ -1,6 +1,17 @@
 from pathlib import Path
 
-from config.config import HEADLESS
+from config.config import (
+    HEADLESS,
+    KEYWORD,
+    DATE_POSTED,
+    EXPERIENCE,
+    REMOTE,
+    EASY_APPLY,
+    SORT_BY,
+    SCRAPE_LIMIT,
+    JOBS_CSV_PATH,
+    JOBS_JSON_PATH,
+)
 from browser.browser_manager import BrowserManager
 from linkedin.login import LinkedInLogin
 from linkedin.profile import LinkedInProfile
@@ -51,20 +62,22 @@ def main():
 
         jobs.open()
 
-        jobs.search("Python Developer")
+        jobs.search(KEYWORD)
 
         # -----------------------
         # Apply Filters ONE AT A TIME (each confirms via its own
-        # "Show results" click). LinkedIn's panel resets earlier
-        # selections during rapid batched clicks without an intermediate
-        # confirm, so sequential calls are more reliable than apply_filters().
+        # "Show results" click) — more reliable than batching them all
+        # in a single panel session.
         # -----------------------
 
-        filters.date_posted("Past week")
-        filters.experience("0-2")
-        filters.remote("Remote")
-        filters.easy_apply()
-        filters.sort_by("Most recent")
+        filters.date_posted(DATE_POSTED)
+        filters.experience(EXPERIENCE)
+        filters.remote(REMOTE)
+
+        if EASY_APPLY:
+            filters.easy_apply()
+
+        filters.sort_by(SORT_BY)
 
         browser.take_screenshot("jobs-filtered")
 
@@ -72,10 +85,10 @@ def main():
         # Scrape filtered job results
         # -----------------------
 
-        scraped_jobs = scraper.scrape(limit=25)
+        scraped_jobs = scraper.scrape(limit=SCRAPE_LIMIT)
 
-        scraper.save_to_csv(scraped_jobs, filepath="data/jobs.csv")
-        scraper.save_to_json(scraped_jobs, filepath="data/jobs.json")
+        scraper.save_to_csv(scraped_jobs, filepath=JOBS_CSV_PATH)
+        scraper.save_to_json(scraped_jobs, filepath=JOBS_JSON_PATH)
 
         logger.info(f"Total jobs scraped: {len(scraped_jobs)}")
 
