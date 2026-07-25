@@ -65,19 +65,27 @@ def main():
         jobs.search(KEYWORD)
 
         # -----------------------
-        # Apply Filters ONE AT A TIME (each confirms via its own
-        # "Show results" click) — more reliable than batching them all
-        # in a single panel session.
+        # Apply ALL filters in a SINGLE panel session.
+        #
+        # We previously applied filters one at a time (each opening +
+        # closing the panel separately). That repeatedly hit a race
+        # condition: if "Show results" failed to click and we force-closed
+        # via Escape, the panel could end up in a broken/partial state that
+        # the next filter's "is panel already open?" check couldn't detect,
+        # so it never re-opened a fresh panel and the next filter's inputs
+        # were never found.
+        #
+        # Opening the panel once, selecting everything, and confirming once
+        # avoids that reopen race entirely.
         # -----------------------
 
-        filters.date_posted(DATE_POSTED)
-        filters.experience(EXPERIENCE)
-        filters.remote(REMOTE)
-
-        if EASY_APPLY:
-            filters.easy_apply()
-
-        filters.sort_by(SORT_BY)
+        filters.apply_filters(
+            date_posted=DATE_POSTED,
+            experience=EXPERIENCE,
+            remote=REMOTE,
+            easy_apply=EASY_APPLY,
+            sort_by=SORT_BY,
+        )
 
         browser.take_screenshot("jobs-filtered")
 

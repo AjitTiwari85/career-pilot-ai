@@ -1,141 +1,109 @@
 {
-  "scraped_at": "2026-07-25T22:27:03",
-  "count": 17,
+  "scraped_at": "2026-07-25T23:21:12",
+  "count": 13,
   "jobs": [
     {
-      "title": "Full Stack Engineer",
-      "company": "Ace Consultancys",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4444685402/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=KDnMBkEpKz1WEBjSXc%2FKCg%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "",
-      "easy_apply": true
-    },
-    {
-      "title": "Frontend Engineer (Fully Remote) - Global AI-Powered Tech Talent Venture",
-      "company": "SkillsCapital",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4444667515/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=dCrYMeNk6HHqREQLmVNaKw%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "6 hours ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Full Stack Engineer",
-      "company": "Zetheta Algorithms Private Limited",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4444684122/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=MJKkjgA9NH4g8RfD5sAzWg%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "7 hours ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Software Developer",
-      "company": "Scoutit",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4444677040/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=685UxtpCAIVe37XXoDvdKA%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "7 hours ago",
-      "easy_apply": true
-    },
-    {
-      "title": "App Developer Intern (Flutter)",
-      "company": "Kalantak Labs",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4441891465/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=L9YP7%2FozRt%2Fd9iZrMT0HwQ%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "9 hours ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Full Stack Engineer",
-      "company": "DMAIC Academy & Consultancy",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4441894361/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=JklLjRxDUsDzg5mek7yheQ%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "10 hours ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Full Stack Engineer Intern (Remote/Paid)",
-      "company": "AI Startup Impact",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4444655196/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=oYTXxJDw0K6IdP5n2kW1Xw%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "",
-      "easy_apply": true
-    },
-    {
-      "title": "Software Engineer",
-      "company": "Brooks Brothers",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4441857529/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=kxdCS3yTcRymyGe5veug6w%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "15 hours ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Web Developer",
-      "company": "ShrinQ Consulting Group Inc",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4444015670/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=ej8jAyxzdFYUP%2FOD52UsBw%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "1 day ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Frontend Developer Intern",
-      "company": "goatdevelopers.com",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4441525348/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=t%2FWD7OApGn4JTZQQUu3N6g%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "2 days ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Full Stack Developer (Node.js, React)",
-      "company": "BitesVilla",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4443810975/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=xkJEHqBW00Qm4sslsdbmAQ%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "2 days ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Data Engineer",
-      "company": "Appinventiv",
-      "location": "Delhi, India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4443821082/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=Ce20XeH2EHgX5nVk4oOPIg%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "2 days ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Full Stack Laravel Developer (BuzzCart Product Team)",
-      "company": "Jobgether",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4444264910/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=0x6o3WV7HbGI2Tg7awUbUA%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "2 days ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Python Developer - Intern - 2026 BE/ BTech Pass outs",
-      "company": "Tech Envo",
-      "location": "Bangalore Urban, Karnataka, India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4443161572/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=DZfXgQbYxb99DGDmSSQFNg%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "3 days ago",
-      "easy_apply": true
-    },
-    {
-      "title": "Software Engineer Intern",
-      "company": "SwasthiQ",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4443105577/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=RzJMkswZfG6OF1cmCT%2FLPg%3D%3D&trk=flagship3_search_srp_jobs",
+      "title": "Backend developers",
+      "company": "IBM",
+      "location": "Bengaluru, Karnataka, India (Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4424805528/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=jnIgSxAdpbkTPRqib4hXuA%3D%3D&trk=flagship3_search_srp_jobs",
       "posted": "",
       "easy_apply": false
     },
     {
-      "title": "Junior Full Stack Developer",
-      "company": "Oxale Infotech",
-      "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4442910365/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=73Etmq7ZEBCF1ykBqf%2Bd7Q%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "3 days ago",
+      "title": "Site core front end developer",
+      "company": "Ecolab",
+      "location": "Bengaluru East, Karnataka, India (On-site)",
+      "link": "https://www.linkedin.com/jobs/view/4427642600/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=mXk86b1jgWDUCbMLJq6oqw%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "6 minutes ago",
+      "easy_apply": false
+    },
+    {
+      "title": "Software Engineer II",
+      "company": "PDI Technologies",
+      "location": "Hyderabad, Telangana, India (On-site)",
+      "link": "https://www.linkedin.com/jobs/view/4407319689/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=qUMaItLsMIM841Po30N3wQ%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "6 minutes ago",
       "easy_apply": true
     },
     {
-      "title": "Remote Full Stack Laravel Developer (BuzzCart Product Team)",
-      "company": "Brainybuzz Digital",
+      "title": "MERN Stack Developer Intern | React, Node & MongoDB Internship",
+      "company": "ArGo Intern",
       "location": "India (Remote)",
-      "link": "https://www.linkedin.com/jobs/view/4442678473/?eBP=NON_CHARGEABLE_CHANNEL&refId=kOsJQkeQ35lQQ%2ByToj19MA%3D%3D&trackingId=GtMh42hqV5poWWQ7dwkClg%3D%3D&trk=flagship3_search_srp_jobs",
-      "posted": "3 days ago",
+      "link": "https://www.linkedin.com/jobs/view/4444686881/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=5ZdgZW8Kbzh3d%2BK62%2FlYjg%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "12 minutes ago",
+      "easy_apply": false
+    },
+    {
+      "title": "Associate Sr. Software Engineer (Python/ Snowflake)",
+      "company": "Netspend",
+      "location": "Noida, Uttar Pradesh, India (On-site)",
+      "link": "https://www.linkedin.com/jobs/view/4418155434/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=Nq6uF9VB7mmtciN3sUdfQA%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "14 minutes ago",
+      "easy_apply": false
+    },
+    {
+      "title": "Front End Developer Intern (HTML, CSS, JavaScript, React)",
+      "company": "Wake Up Whistle",
+      "location": "India (Remote)",
+      "link": "https://www.linkedin.com/jobs/view/4444688843/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=f6q%2B3v5PvAbdEVGhfI9IGw%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "17 minutes ago",
+      "easy_apply": false
+    },
+    {
+      "title": "Software Developer",
+      "company": "Arham Technologies Limited",
+      "location": "Naya Raipur, India (On-site)",
+      "link": "https://www.linkedin.com/jobs/view/4442323182/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=ZrUIGYYhTIP3iEyWGUOOQg%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "18 minutes ago",
+      "easy_apply": true
+    },
+    {
+      "title": "Founding Software Engineer",
+      "company": "shyva AI",
+      "location": "India (Remote)",
+      "link": "https://www.linkedin.com/jobs/view/4444675837/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=r%2Bs18VZMs7z9m5HDJkGUZg%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "Company review time is typically 1 week",
+      "easy_apply": true
+    },
+    {
+      "title": "Computer Scientist - I ( Backend Heavy - Full Stack )",
+      "company": "Adobe",
+      "location": "Bengaluru East, Karnataka, India (On-site)",
+      "link": "https://www.linkedin.com/jobs/view/4426975891/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=ihhur6dw8j1pei4JFqzBXw%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "39 minutes ago",
+      "easy_apply": false
+    },
+    {
+      "title": "Associate - Software Engineer",
+      "company": "Firstsource",
+      "location": "Bengaluru, Karnataka, India (Hybrid)",
+      "link": "https://www.linkedin.com/jobs/view/4445333902/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=iAPC1SEKiE4a9DJx3TbXzg%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "45 minutes ago",
+      "easy_apply": false
+    },
+    {
+      "title": "AI Compiler Engineer",
+      "company": "EnCharge AI",
+      "location": "India (Remote)",
+      "link": "https://www.linkedin.com/jobs/view/4441217492/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=jQgypLpDCzFQyLqYqOvcpg%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "45 minutes ago",
+      "easy_apply": true
+    },
+    {
+      "title": "Principal Research Engineer, Applied AI (Individual Contributor)",
+      "company": "Mulya Technologies",
+      "location": "India (Remote)",
+      "link": "https://www.linkedin.com/jobs/view/4441600070/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=On3xFnWPXZwVGKQKxKu6kw%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "47 minutes ago",
+      "easy_apply": true
+    },
+    {
+      "title": "PHP Developer",
+      "company": "Dryft Dynamics",
+      "location": "Ranchi, Jharkhand, India (On-site)",
+      "link": "https://www.linkedin.com/jobs/view/4440434345/?eBP=NON_CHARGEABLE_CHANNEL&refId=mVjAVzMw82%2FxImx%2BiAbH%2Fg%3D%3D&trackingId=xkE8c4GPRYTFDVkya8pW0A%3D%3D&trk=flagship3_search_srp_jobs",
+      "posted": "Company review time is typically 1 week",
       "easy_apply": true
     }
   ]

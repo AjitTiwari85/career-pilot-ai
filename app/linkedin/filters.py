@@ -117,13 +117,29 @@ class LinkedInFilters:
         self.browser.wait(2200)
         return True
 
-    def _select_by_id(self, full_id, label_for_log=""):
-        """Selects a checkbox/radio input inside the panel by its exact ID."""
+    def _select_by_id(self, full_id, label_for_log="", retries=4, retry_wait_ms=800):
+        """
+        Selects a checkbox/radio input inside the panel by its exact ID.
+
+        The panel's filter list can take longer to fully render than our
+        fixed post-open wait (especially once the account has many filter
+        options — company suggestions, titles, etc. — to populate). If the
+        input isn't found immediately, retry a few times with short waits
+        instead of failing outright.
+        """
 
         input_el = self.browser.page.locator(f'input[id="{full_id}"]').first
 
+        for attempt in range(retries):
+
+            if input_el.count() > 0:
+                break
+
+            if attempt < retries - 1:
+                self.browser.wait(retry_wait_ms)
+
         if input_el.count() == 0:
-            logger.error(f"Input id '{full_id}' not found ({label_for_log}).")
+            logger.error(f"Input id '{full_id}' not found ({label_for_log}) after {retries} attempts.")
             return False
 
         try:
@@ -280,7 +296,7 @@ class LinkedInFilters:
         for full_id, log_label in id_label_pairs:
             if self._select_by_id(full_id, log_label):
                 applied_any = True
-            self.browser.wait(300)
+            self.browser.wait(500)
 
         if applied_any:
             self._click_show_results()
@@ -408,14 +424,14 @@ class LinkedInFilters:
         for full_id, log_label in pairs:
             if self._select_by_id(full_id, log_label):
                 logger.success(f"  -> {log_label} set")
-            self.browser.wait(300)
+            self.browser.wait(500)
 
         if easy_apply:
             toggle = self._find_easy_apply_toggle()
             if toggle is not None:
                 if self._safe_click(toggle, "Easy Apply (toggle)"):
                     logger.success("  -> Easy Apply toggle set : ON")
-                self.browser.wait(300)
+                self.browser.wait(500)
             else:
                 logger.warning("  -> Easy Apply toggle NOT FOUND in panel. Skipped.")
                 self._debug_dump_checkbox_inputs("apply-filters-easy-apply")
