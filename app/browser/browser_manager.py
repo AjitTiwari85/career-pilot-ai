@@ -40,9 +40,7 @@ class BrowserManager:
 
         self.page = self.context.new_page()
 
-    # -----------------------
     # Navigation
-    # -----------------------
 
     def open(self, url, timeout=60000, retries=2):
         """
@@ -89,9 +87,7 @@ class BrowserManager:
             logger.error(f"Navigation to '{url}' failed completely: {e}")
             raise last_error
 
-    # -----------------------
     # Google Search
-    # -----------------------
 
     def search_google(self, text):
 
@@ -101,30 +97,22 @@ class BrowserManager:
 
         search_box.press("Enter")
 
-    # -----------------------
     # Wait
-    # -----------------------
 
     def wait(self, milliseconds):
         self.page.wait_for_timeout(milliseconds)
 
-    # -----------------------
     # Get Title
-    # -----------------------
 
     def get_title(self):
         return self.page.title()
 
-    # -----------------------
     # Get URL
-    # -----------------------
 
     def get_url(self):
         return self.page.url
 
-    # -----------------------
     # Screenshot
-    # -----------------------
 
     def take_screenshot(self, name):
 
@@ -135,9 +123,7 @@ class BrowserManager:
             full_page=True
         )
 
-    # -----------------------
     # Save Session
-    # -----------------------
 
     def save_session(self):
 
@@ -149,9 +135,7 @@ class BrowserManager:
 
         logger.success("✓ Session Saved Successfully")
 
-    # -----------------------
     # Close Browser
-    # -----------------------
 
     def close(self):
 
